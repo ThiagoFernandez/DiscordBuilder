@@ -1,0 +1,116 @@
+{
+  "server_settings": {
+      "system_channel": "bienvenida",
+      "afk_channel": "AFK",
+      "afk_timeout": 300
+    },
+  "roles": [
+    {
+      "name": "Admin",
+      "hoist": true,
+      "color": "0xFF0000"
+    },
+    {
+      "name": "gays",
+      "hoist": true,
+      "color": "0xFF69B4"
+    },
+    {
+      "name": "forastero",
+      "hoist": true
+    },
+    {
+      "name": "desempleados"
+    }
+  ],
+  "categories": [
+    {
+      "name": "🔊 VOZ",
+      "channels": [
+        {
+          "name": "General",
+          "type": "voice"
+        },
+        {
+          "name": "AFK",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "💬 CHARLA",
+      "channels": [
+        {
+          "name": "general",
+          "type": "text",
+          "topic": "de todo un poco"
+        },
+        {
+          "name": "musica",
+          "type": "text",
+          "topic": "Comandos para Music Machine 🎵"
+        },
+        {
+          "name": "obras de arte",
+          "type": "text"
+        },
+        {
+          "name": "reels shorts tiktok tw",
+          "type":"text",
+          "topic": "memes"
+        }
+      ]
+    },
+    {
+      "name": "🎮 GAMING",
+      "channels": [
+        {
+          "name": "pub",
+          "type": "voice"
+        },
+        {
+          "name": "flex",
+          "type": "voice",
+          "user_limit": 5
+        },
+        {
+          "name": "Dúo",
+          "type": "voice",
+          "user_limit": 2
+        },
+        {
+          "name": "Sex n terraria",
+          "type": "voice"
+        },
+        {
+          "name": "grapples de mi galore",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "📌 INFO",
+      "overwrites": {
+        "@everyone": {
+          "send_messages": false
+        },
+        "Admin": {
+          "send_messages": true
+        },
+        "ServerBuilder": {
+          "send_messages": true
+        }
+      },
+      "channels": [
+        {
+          "name": "bienvenida",
+          "type": "text"
+        },
+        {
+          "name": "anuncios",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
