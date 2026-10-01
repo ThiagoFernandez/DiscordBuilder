@@ -65,6 +65,19 @@ python main.py
 
 Al terminar imprime la estructura final del server y se desconecta solo.
 
+### Borrar lo que sobra: `--prune`
+
+Por defecto el script nunca borra nada. Con `--prune`, además de crear y actualizar, **borra los
+canales, categorías y roles que están en el server pero no en el `server.json`**. Mirá siempre
+primero qué borraría:
+
+```bash
+python main.py --prune --dry-run
+```
+
+Borrar un canal borra todos sus mensajes y no se puede deshacer. Nunca toca `@everyone`, los
+roles de bots o integraciones, ni los roles que están a la altura del bot o por encima.
+
 Antes de conectarse, el script **valida el `server.json`**: si falta un `name` o un canal tiene
 un `type` inválido, frena sin tocar el server.
 
@@ -284,12 +297,12 @@ guardar en Git y reconstruir la estructura de un server a partir del mismo archi
 
 ## Limitaciones
 
-* No borra lo que está en el server y no figura en el JSON. Solo crea y actualiza.
+* Sin `--prune` no borra lo que está en el server y no figura en el JSON. Solo crea y actualiza.
 * Los roles existentes se re-editan en cada corrida (color y `hoist`): manda el JSON.
 * Busca los canales por nombre dentro de su categoría. Si renombrás un canal a mano, en la
   próxima corrida se crea de nuevo con el nombre del JSON.
 * No administra miembros ni asigna roles automáticamente.
-* No elimina roles, categorías o canales que hayan sido eliminados del `server.json`.
+* Con `--prune`, un canal renombrado a mano cuenta como "no está en el JSON" y se borra.
 * El bot solo puede modificar recursos sobre los que tenga permisos suficientes.
 * Discord mantiene sus propias restricciones sobre nombres, permisos, jerarquía de roles y
   configuración del server.

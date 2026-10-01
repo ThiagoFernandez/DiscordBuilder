@@ -21,6 +21,21 @@
     },
     {
       "name": "desempleados"
+    },
+    {
+      "name": "trabaja",
+      "hoist": true,
+      "color": "0x0000FF"
+    },
+    {
+      "name": "tel aviv goy",
+      "hoist": true,
+      "color": "0xFFFF00"
+    },
+    {
+      "name": "antisemita rango 67",
+      "hoist": true,
+      "color": "0x800080"
     }
   ],
   "categories": [
@@ -33,7 +48,13 @@
         },
         {
           "name": "AFK",
-          "type": "voice"
+          "type": "voice",
+          "overwrites": {
+            "@everyone": {
+              "speak": false,
+              "stream": false
+            }
+          }
         }
       ]
     },
@@ -48,7 +69,13 @@
         {
           "name": "musica",
           "type": "text",
-          "topic": "Comandos para Music Machine 🎵"
+          "topic": "Comandos para Music Machine 🎵",
+          "overwrites": {
+            "@everyone": {
+              "attach_files": false,
+              "embed_links": false
+            }
+          }
         },
         {
           "name": "obras de arte",
@@ -95,9 +122,6 @@
           "send_messages": false
         },
         "Admin": {
-          "send_messages": true
-        },
-        "ServerBuilder": {
           "send_messages": true
         }
       },
